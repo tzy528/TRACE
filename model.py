@@ -88,7 +88,7 @@ class ResponseSampler(nn.Module):
 # ============================================================
 def compute_relative_instability(instability, edge_index, num_nodes):
     row, col = edge_index
-    neigh_mean = scatter_mean(instability[col], row, dim=0, dim_size=num_nodes)
+    neigh_mean = scatter_mean(instability.detach()[col], row, dim=0, dim_size=num_nodes)
     return torch.abs(instability - neigh_mean)
 
 
