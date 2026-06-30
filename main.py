@@ -51,8 +51,8 @@ class Config:
     # Loss weights. Entropy is removed. DEV is used as a loss, not final score.
     w_stable: float = 0.05
     w_dev: float = 0.02
-    w_sep: float = 0.01
-    w_std: float = 0.005
+    w_sep: float = 0.00
+    w_std: float = 0.00
 
     # Pseudo-genuine nodes are selected by low response-neighborhood discrepancy.
     pseudo_genuine_ratio: float = 0.15
