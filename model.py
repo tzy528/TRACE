@@ -33,6 +33,8 @@ class SpectralResponse(nn.Module):
             nn.ReLU(),
             nn.Linear(hid_dim, hid_dim),
         )
+        for p in self.energy_proj.parameters():
+            p.requires_grad_(False)
 
     def forward(self, x, edge_index, num_nodes):
         row, col = edge_index
